@@ -34,5 +34,6 @@ WHAT IS MISSING AND WHAT HAS TO BE IMPROVED:
 PROBLEMS I HAVE ENCOUNTERED THAT CAN BE FURTHER DISCUSSED AND WORKED ON:
 - Data Binding of complex Models and how to always hand this efficiently in MVC .NET
 - When to  use View-Models layer 
+- I have few exceptions I havent handeled yet because I havent completed edit and create functionalities (Save and Create Actions)
 - Authorisation and Authentication solutions for smaller applications vs more complex solutions that guaranty data safety
 
