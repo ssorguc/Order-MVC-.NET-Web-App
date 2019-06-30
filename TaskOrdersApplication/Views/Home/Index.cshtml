@@ -1,0 +1,47 @@
+﻿@model TaskOrdersApplication.Models.Customer
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="container justify-content-md-center">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col">
+            <table class="table-responsive-lg ">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Log in</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @using (Html.BeginForm("Index", "Home", Model))
+                    {
+
+                    <tr>
+                        <td>@Html.LabelFor(m => m.UserName)</td>
+                        <td>@Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })</td>
+                        <td>@Html.ValidationMessageFor(m => m.UserName)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(m => m.Password)</td>
+                        <td>
+                            @Html.EditorFor(m => m.Password, new { @class = "form-control" })
+                        </td>
+                        <td>@Html.ValidationMessageFor(m => m.Password)</td>
+
+                    </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">Log in</button>
+                            </td>
+                        </tr>
+                        
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
