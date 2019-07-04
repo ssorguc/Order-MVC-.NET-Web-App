@@ -1,0 +1,24 @@
+﻿@model TaskOrdersApplication.ViewModel.OrdersViewModel
+@{
+    ViewBag.Title = "Details";
+}
+<h3>Details about the Order</h3>
+
+<ul>
+    <li>Oder Id: @Model.Order.Id</li>
+    <li>Order date: @Model.Order.DateOfOrder</li>
+    <li>Customer: @Model.Customer.UserName</li>
+    <li>Customer Id: @Model.Customer.Id</li>
+    <li class="list-group-item-heading">
+        List of items
+        <ul>
+            @foreach (var item in Model.Order.OrderedItems)
+            {
+                <li>Item name: @item.Name</li>
+                <li>Item Id: @item.Id</li>
+                <li>Item price: @item.Amount</li>
+                <li>Customer ordered @item.Unit . of the item @item.Name</li>
+            }
+        </ul>
+    </li>
+</ul>

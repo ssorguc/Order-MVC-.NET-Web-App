@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+
 namespace TaskOrdersApplication.Models
 {
     public class OrderItem
@@ -19,4 +20,5 @@ namespace TaskOrdersApplication.Models
         [Required]
         public Order OrderOfTheItem { get; set; }
     }
+
 }

@@ -1,0 +1,27 @@
+﻿@model TaskOrdersApplication.ViewModel.OrdersViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new order</h2>
+@using (Html.BeginForm("Save", "Orders"))
+{
+<div class="form-group">
+
+    @Html.LabelFor(m => m.Order.DateOfOrder)
+    @Html.TextBoxFor(m => m.Order.DateOfOrder, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Order.DateOfOrder)
+
+    @Html.LabelFor(m => m.Customer.UserName)
+    @Html.TextBoxFor(m => m.Customer.UserName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Customer.UserName)
+
+    
+    <button class="btn-group" type="submit">Add order</button>
+</div>
+}
+<div>
+    @Html.ActionLink("Back to Orders", "Index")
+</div>
+

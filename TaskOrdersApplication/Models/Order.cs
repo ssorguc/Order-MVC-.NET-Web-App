@@ -10,16 +10,16 @@ namespace TaskOrdersApplication.Models
     {
         public int Id { get; set; }
         [Required]
-   
+
         public Customer Customer { get; set; }
-            
+        public int CustomerId { get; set; }
         [Required]
-        [ValidationDate]
-        [Display(Name ="Date of the Order")]
+        [Display(Name = "Date of the Order")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DateOfOrder { get; set; }
 
         [Required]
-        [Display(Name ="Total Amount in USD")]
+        [Display(Name = "Total Amount in USD")]
         public double TotalAmount { get { return CalculateTotalAmount(); } }
 
         [Required]

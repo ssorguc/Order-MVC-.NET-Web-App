@@ -1,47 +1,25 @@
-﻿@model TaskOrdersApplication.Models.Customer
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
-<div class="container justify-content-md-center">
+
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col">
-            <table class="table-responsive-lg ">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Log in</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @using (Html.BeginForm("Index", "Home", Model))
-                    {
+            <div class="col-sm-2"></div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Log in or register</h3>
+                        <p class="card-text">To check out user managmet implementation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Click on Orders</h3>
+                        <p class="card-text">To check out CRUD operations, validation, data binding and Entity Framework implementation.</p>
 
-                    <tr>
-                        <td>@Html.LabelFor(m => m.UserName)</td>
-                        <td>@Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })</td>
-                        <td>@Html.ValidationMessageFor(m => m.UserName)</td>
-                    </tr>
-                    <tr>
-                        <td>@Html.LabelFor(m => m.Password)</td>
-                        <td>
-                            @Html.EditorFor(m => m.Password, new { @class = "form-control" })
-                        </td>
-                        <td>@Html.ValidationMessageFor(m => m.Password)</td>
-
-                    </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <button type="submit" class="btn btn-primary">Log in</button>
-                            </td>
-                        </tr>
-                        
-                    }
-
-                </tbody>
-            </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
         </div>
-        <div class="col-md-4"></div>
-    </div>
-</div>

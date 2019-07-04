@@ -1,0 +1,66 @@
+﻿@model TaskOrdersApplication.ViewModel.OrdersViewModel
+@{
+    ViewBag.Title = "Index";
+}
+@if (Model.Orders != null)
+{
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Orders</th>
+                <th scope="col">Id of the Order</th>
+                <th scope="col">Customer</th>
+                <th scope="col">Date of Order</th>
+                <th scope="col">Total amount</th>
+                <th scope="col">Number of Items</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <th scope="row">Order</th>
+                    <td>@order.Id</td>
+                    <td>@order.Customer.UserName</td>
+                    <td>@String.Format("{0:MM/dd/yyyy}", @order.DateOfOrder)</td>
+                    <td>@order.TotalAmount</td>
+                    <td>@order.OrderedItems.Count</td>
+                    <td>
+                        @using (@Html.BeginForm("Delete", "Orders", new { id = order.Id }))
+                        {
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                        }
+                    </td>
+                    <td>
+                        @using (@Html.BeginForm("Edit", "Orders",new { id = order.Id }))
+                        {
+                            <button class="btn btn-primary" type="submit">Edit</button>
+                        }
+                    </td>
+                    <td>
+                        @using (@Html.BeginForm("Details", "Orders", new { id = order.Id }))
+                        {
+                            <button class="btn btn-default" type="submit">More</button>
+                        }
+                    </td>
+
+                </tr>
+
+
+
+            }
+        </tbody>
+    </table>
+
+    using (@Html.BeginForm("Create", "Orders"))
+    {
+        <button class="btn btn-primary" type="submit">Create new order</button>
+    }
+}
+else
+{
+    <h3>No orders in the record!</h3>
+}
