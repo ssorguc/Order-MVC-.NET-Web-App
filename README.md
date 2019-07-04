@@ -25,15 +25,12 @@ WHAT HAVE I COMPLETED:
 - Handling HTTP POST AND HTTP GET Request
 
 WHAT IS MISSING AND WHAT HAS TO BE IMPROVED:
-- havent completed creation and edit opetions for all properties of the order, data binding in the create and edit acctions in following views should  be handled better
-- user managment is still missing, log in should be improved so that authorisation and authentication is enabled (for example when you log in then you can see the orders list that belong to you, when addmin logs in he can see all the ongoing orders, and annonymous visitors can only see the log in and home page)
-- possible architectural changes: application is still simple at the moment, but home controller might get overloaded. Creating two more controllers CustomerControler and OrderControler would do better job in concerns separation
-- using a framework like Angular and React would improve front end development process and concern separation, aswell as the design and user friendliness
+- havent completed creation of the order
+- user managment is partial, log in should be enabled for customers from database
+- using a framework like Angular and React would improve front end development process and separation of concerns, aswell as the design and user friendliness
 
 
 PROBLEMS I HAVE ENCOUNTERED THAT CAN BE FURTHER DISCUSSED AND WORKED ON:
-- Data Binding of complex Models and how to always hand this efficiently in MVC .NET
-- When to  use View-Models layer 
-- I have few exceptions I havent handeled yet because I havent completed edit and create functionalities (Save and Create Actions)
-- Authorisation and Authentication solutions for smaller applications vs more complex solutions that guaranty data safety
+- Data Binding of complex Models and how to always hand this efficiently in MVC .NET, when to relay only on .NET framework when on JS 
+- Authorisation and Authentication simple solutions for smaller applications vs more complex solutions that guaranty data safety
 
